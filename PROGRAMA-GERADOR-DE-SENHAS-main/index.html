@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+<link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <title>Gerador de Senhas</title>
 </head>
@@ -14,6 +15,13 @@
 max="20"></label><br><br>
 <button onclick="geraSenha()">Gerar Senha</button><br><br>
 <input type="text" id="campoSenha" readonly>
-<script src="main.js"></script>
+ 
+<script src="main.js"><div class="parametro-senha">
+  <h4 class="parametro-senha__titulo">Força da senha</h4>
+  <div class="barra"></div>
+  <div class="forca fraca"></div>
+  <div class="parametro-senha-textos"></div>
+</div>
+</script>
 </body>
 </html>

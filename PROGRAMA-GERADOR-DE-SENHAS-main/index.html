@@ -1,27 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<link rel="stylesheet" href="style.css">
-<meta charset="UTF-8">
-<title>Gerador de Senhas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gerador de Senhas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Gerador de Senhas</h1>
-<label><input type="checkbox" class="checkbox" checked> Letras Maiusculas</label><br>
-<label><input type="checkbox" class="checkbox"> Letras Minusculas</label><br>
-<label><input type="checkbox" class="checkbox"> Numeros</label><br>
-<label><input type="checkbox" class="checkbox"> Simbolos</label><br><br>
-<label>Tamanho da senha: <input type="number" id="tamanhoSenha" value="8" min="4"
-max="20"></label><br><br>
-<button onclick="geraSenha()">Gerar Senha</button><br><br>
-<input type="text" id="campoSenha" readonly>
- 
-<script src="main.js"><div class="parametro-senha">
-  <h4 class="parametro-senha__titulo">Força da senha</h4>
-  <div class="barra"></div>
-  <div class="forca fraca"></div>
-  <div class="parametro-senha-textos"></div>
-</div>
-</script>
+  <div class="container">
+    <header class="page-header">
+      <h1>Gerador de Senhas</h1>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="inicio">Início</button>
+      <button class="tab-btn" data-tab="resultado">Resultado</button>
+    </div>
+
+    <div class="main-grid">
+      <div class="tab-pane active" id="inicio">
+        <div class="card controls">
+          <h2>Início</h2>
+
+      <div class="input-group checks">
+        <label class="checkbox-label"><input type="checkbox" class="checkbox" checked> Letras Maiúsculas</label>
+        <label class="checkbox-label"><input type="checkbox" class="checkbox" checked> Letras Minúsculas</label>
+        <label class="checkbox-label"><input type="checkbox" class="checkbox" checked> Números</label>
+        <label class="checkbox-label"><input type="checkbox" class="checkbox" checked> Símbolos</label>
+      </div>
+
+      <div class="input-group">
+        <label>Tamanho da senha:
+          <input type="number" id="tamanhoSenha" value="8" min="4" max="40" class="number-input">
+        </label>
+      </div>
+
+      <!-- removed name/date inputs as requested -->
+
+      <button id="gerarBtn">Gerar Senha</button>
+
+      
+      <footer class="page-footer">
+        <p>Para você que não tem capacidade cognitiva para criar uma senha com suas próprias datas e criatividade, esse site é ideal para você. O site gerador de senhas, cria uma senha baseada em letras maiúsculas ou minusculas, conforme o que for selecionado nas caixas seletoras. E assim só basta copiar a senha e utilizar para todas suas plataformas!</p>
+      </footer>
+          </div>
+        </div>
+
+      <div class="tab-pane" id="resultado">
+        <div class="card result-card">
+            <h2>Resultado</h2>
+            <input type="text" id="campoSenha" readonly class="senha-output" aria-label="Senha gerada">
+
+            <div class="parametro-senha result-strength">
+              <h4 class="parametro-senha__titulo">Força da senha</h4>
+              <div class="barra"></div>
+              <div class="forca"></div>
+              <div class="parametro-senha-textos"></div>
+            </div>
+
+            <button class="copy-btn" id="copyBtn" title="Clique para copiar a senha">Clique para copiar a senha</button>
+          </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
